@@ -1,10 +1,11 @@
 import { useState } from "react";
-import  Lista  from "./Lista.jsx";
+import Lista from "./Lista.jsx";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   const [tareas, setTareas] = useState([
-    'Lavar la ropa', 
-    'Pasear al perro', 
+    'Lavar la ropa',
+    'Pasear al perro',
     'Aprender React'
   ]);
 
@@ -20,17 +21,33 @@ function App() {
   };
 
   return (
-    <div>
-      <h1>Lista de Tareas</h1>
-      <input 
-        type="text" 
-        placeholder="Ingresa una nueva tarea" 
-        value={texto} 
-        onChange={manejarCambios}
-      />
-      <button onClick={agregarTarea}>Agregar</button>
+    <>
+      <div>
+        <h1>Lista de Tareas</h1>
+        <input
+          type="text"
+          placeholder="Ingresa una nueva tarea"
+          value={texto}
+          onChange={manejarCambios}
+        />
+        <button onClick={agregarTarea}>Agregar</button>
         <Lista tareas={tareas} />
-    </div>
+      </div>
+      <div>
+        <nav>
+          <Link to="/">Inicio</Link>
+          <Link to="/Lista">Ver Lista de Tareas</Link>
+        </nav>
+        
+        <hr />
+
+        <Routes>
+          <Route path="/" element={<h1>Bienvenido a la lista de tareas</h1>} />
+          <Route path="/Lista" element={<Lista tareas={tareas} />} />
+        </Routes>
+      </div>
+    </>
+
   );
 }
 
