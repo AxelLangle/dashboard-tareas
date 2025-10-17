@@ -1,0 +1,45 @@
+.tareas-container {
+  padding: 20px;
+  align-items: center;
+
+}
+.tareas-container h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.tareas-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.tareas-container li {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.tareas-container button {
+  background-color: blue;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-left: auto;
+  font-size: small;
+  border-radius: 5px;
+  flex-direction: column;
+  
+}
+.tareas-container button:hover {
+  background-color: darkblue;
+}
+
+.tareas-container input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: calc(100% - 22px);
+  margin-bottom: 10px;
+}
+
